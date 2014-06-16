@@ -1,0 +1,320 @@
+@import "colors";
+@import "curvy";
+@import "animated-if";
+@import "flex";
+@import "typography";
+@import "button";
+@import "clearfix";
+@import "modal-popup";
+
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background-color: $background;
+}
+
+
+#topnav {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+#navlist {
+    position: absolute;
+    background: $background;
+    z-index: 1;
+    left: -14em;
+    width: 15em;
+    height: 100%;
+    border-right: 1px solid $secondary;
+    a {
+	display: block;
+	cursor: pointer;
+	padding: 0.75em 1em;
+	border-bottom: 1px solid $tertiary;
+	color: $normal;
+	text-decoration: none;
+	&.active {
+	    color: $logo_blue;
+	    background-color: $bghighlight;
+	}
+	&:hover {
+	    background-color: $bghighlight;
+	}
+    }
+
+    -webkit-transition: -webkit-transform 250ms ease;
+    -webkit-transform: translateX(0);
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    &:hover {
+	-webkit-transform: translateX(14em);
+    }
+}
+
+
+#main {
+    @extend .display-flex;
+    justify-content: center;
+    flex-align: center;
+    -webkit-transform: translateX(0);
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    margin-top: 1.5em;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+}
+
+
+#mb-demo{
+    @extend .flex;
+    @extend .display-flex;
+    > div {
+	@extend .flex;
+	padding-right: 1.5em;
+    }
+    input, textarea {
+	box-sizing: border-box;
+    }
+    h3 {
+	font-size: 2em;
+    }
+    .story {
+	max-width: 10em;
+    }
+    .redline {
+	border-top: 1px solid red;
+    }
+    .height-display {
+	font-size: 6em;
+    }
+}
+
+button.del {
+    margin-top: 1.5em;
+}
+
+
+
+#now-demo {
+    font-size: 3em;
+
+    .time {
+	display: inline-block;
+	height: 1.5em;
+	width: 1.15em;
+	text-align: center;
+	vertical-align: top;
+	overflow: hidden;
+	
+	/* without this, overflow:hidden won't take effect because the things
+           we're trying to hide are on a separate accelerated
+           context. */
+	-webkit-transform: translateY(0);
+	
+	> div {
+   	    height: 1.5em;
+	    position: absolute;
+	}
+    }
+    .time.animating {
+	> div {
+	    -webkit-animation: slide-down 750ms;
+	}
+    }
+
+    .mood {
+	display: inline-block;
+	height: 1.5em;
+	width: 7em;
+	text-align: center;
+	vertical-align: top;
+	.current, .next {
+	    position: absolute;
+	    top: 0;
+	}
+    }
+    .mood.animating {
+	.current {
+	    -webkit-animation: fade-away 2s;
+	}
+	.next {
+	    -webkit-animation: fade-in 2s;
+	}
+
+    }
+
+    .mood-box {
+	-webkit-transition: color 2s;
+	&.Happy {
+	    color: $orange;
+	}
+	&.Hungry {
+	    color: $magenta;
+	}
+	&.Tired {
+	    color: $violet;
+	}
+	&.Sleepy {
+	    color: #000;
+	}
+    }
+
+}
+
+@-webkit-keyframes slide-down {
+    from { -webkit-transform: translateY(-100%); }
+    to { -webkit-transform: translateY(0); }
+}
+
+@-webkit-keyframes fade-away {
+    from { opacity: 1 }
+    to { opacity: 0 }
+}
+
+@-webkit-keyframes fade-in {
+    from { opacity: 0 }
+    to { opacity: 1 }
+}
+
+
+#parent-demo {
+    width: 551px;
+    height: 700px;
+    background-image: url(../tablet.png);
+    padding: 80px 56px 80px 62px;
+    box-sizing: border-box;
+
+    > div {
+	width: 100%;
+	height: 100%;
+	overflow:hidden;
+	-webkit-transform: translateX(0);
+    }
+
+    > div > div {
+	width: 200%;
+	height: 100%;
+	-webkit-transition: -webkit-transform 250ms;
+	-webkit-transform: translateX(0);
+	&.over {
+	    -webkit-transform: translateX(-50%);
+	}
+	
+	> div {
+	    min-height: 1em;
+	    width: 50%;
+	    box-sizing: border-box;
+	    float: left;
+	}
+    }
+    
+    .list {
+	overflow-y:scroll;
+	height: 100%;
+	
+	a {
+	    display: block;
+	    cursor: pointer;
+	    padding: 0.75em 1em;
+	    border-bottom: 1px solid $tertiary;
+	    color: $normal;
+	    text-decoration: none;
+	    &.active {
+		color: $logo_blue;
+		background-color: $bghighlight;
+	    }
+	    &:hover {
+		background-color: $bghighlight;
+	    }
+	}
+    }
+}
+
+.attribution {
+    font-size: 0.8;
+    color: $logo_blue;
+    font-style: italic;
+}
+
+#physical-metaphors {
+    @extend .display-flex;
+    > div {
+	@extend .flex;
+    }
+}
+
+.tomster {
+    position: relative;
+    width: 324px;
+    height: 308px;
+    margin: 60px;
+    left: -60px;
+
+    -webkit-transform-style: preserve-3d;
+
+    -webkit-animation: spin 6s linear infinite;
+
+    > div {
+	@extend .curvy;
+	position: absolute;
+	top: 0; left: 0;
+	width: 100%;
+	height: 100%;
+	x-webkit-backface-visibility: hidden;
+
+    }
+    .front {
+	background-color: $bghighlight;	
+	background-image: url(../tomster.png);
+	z-index: 1;
+    }
+    .back {
+	background-color: $bghighlight;
+	background-image: url(../tomster.png);
+	-webkit-transform: translateX(-50%)rotateY(-120deg)translateX(-50%);  
+    }
+    .side {
+	background-color: $bghighlight;
+	background-image: url(../tomster.png);
+	-webkit-transform: translateX(50%)rotateY(120deg)translateX(50%);  
+    }
+
+}
+
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotateX(-15deg); }
+    25% { -webkit-transform: rotateX(-15deg)rotateY(90deg); }
+    75% { -webkit-transform: rotateX(-15deg)rotateY(270deg); }
+    to { -webkit-transform: rotateX(-15deg)rotateY(360deg); }
+}
+
+.CodeRay {
+    font-size: 2em;
+    border: 1px solid $secondary;
+    @extend .curvy;
+    background-color: $bghighlight;
+    padding: 0 0.5em;
+}
+
+#animated-if-demo {
+    border: 1px solid $secondary;
+    @extend .curvy;
+    background-color: $pale_cyan;
+    padding: 0 0.5em;
+    min-width: 30em;
+    select {
+	display: inline-block;
+    }
+    .checkbox input {
+	display: inline;
+    }
+    .buttons {
+	text-align: center;
+    }
+}

@@ -1,0 +1,15 @@
+<div id="topnav">
+  <div id="navlist">
+    {{#each}}
+      {{#link-to route}}{{title}}{{/link-to}}
+    {{/each}}
+  </div>
+
+  <div id="main">
+    {{outlet}}
+  </div>
+</div>
+
+{{#if showingModalDemo}}
+  {{render "modal-demo"}}
+{{/if}}
