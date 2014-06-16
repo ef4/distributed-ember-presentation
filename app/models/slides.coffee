@@ -1,5 +1,7 @@
 slides = [
   "Title Slide"
+  "Why"
+  "Remote Debugging"
 ]
 
 Slide = Ember.Object.extend
