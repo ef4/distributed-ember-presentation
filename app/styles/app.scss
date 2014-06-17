@@ -1,8 +1,6 @@
 @import "colors";
 @import "curvy";
-@import "animated-if";
 @import "flex";
-@import "typography";
 @import "button";
 @import "clearfix";
 @import "modal-popup";
@@ -71,116 +69,6 @@ html, body {
 }
 
 
-#mb-demo{
-    @extend .flex;
-    @extend .display-flex;
-    > div {
-	@extend .flex;
-	padding-right: 1.5em;
-    }
-    input, textarea {
-	box-sizing: border-box;
-    }
-    h3 {
-	font-size: 2em;
-    }
-    .story {
-	max-width: 10em;
-    }
-    .redline {
-	border-top: 1px solid red;
-    }
-    .height-display {
-	font-size: 6em;
-    }
-}
-
-button.del {
-    margin-top: 1.5em;
-}
-
-
-
-#now-demo {
-    font-size: 3em;
-
-    .time {
-	display: inline-block;
-	height: 1.5em;
-	width: 1.15em;
-	text-align: center;
-	vertical-align: top;
-	overflow: hidden;
-	
-	/* without this, overflow:hidden won't take effect because the things
-           we're trying to hide are on a separate accelerated
-           context. */
-	-webkit-transform: translateY(0);
-	
-	> div {
-   	    height: 1.5em;
-	    position: absolute;
-	}
-    }
-    .time.animating {
-	> div {
-	    -webkit-animation: slide-down 750ms;
-	}
-    }
-
-    .mood {
-	display: inline-block;
-	height: 1.5em;
-	width: 7em;
-	text-align: center;
-	vertical-align: top;
-	.current, .next {
-	    position: absolute;
-	    top: 0;
-	}
-    }
-    .mood.animating {
-	.current {
-	    -webkit-animation: fade-away 2s;
-	}
-	.next {
-	    -webkit-animation: fade-in 2s;
-	}
-
-    }
-
-    .mood-box {
-	-webkit-transition: color 2s;
-	&.Happy {
-	    color: $orange;
-	}
-	&.Hungry {
-	    color: $magenta;
-	}
-	&.Tired {
-	    color: $violet;
-	}
-	&.Sleepy {
-	    color: #000;
-	}
-    }
-
-}
-
-@-webkit-keyframes slide-down {
-    from { -webkit-transform: translateY(-100%); }
-    to { -webkit-transform: translateY(0); }
-}
-
-@-webkit-keyframes fade-away {
-    from { opacity: 1 }
-    to { opacity: 0 }
-}
-
-@-webkit-keyframes fade-in {
-    from { opacity: 0 }
-    to { opacity: 1 }
-}
 
 
 #parent-demo {
@@ -242,83 +130,31 @@ button.del {
     font-style: italic;
 }
 
-#physical-metaphors {
-    @extend .display-flex;
-    > div {
-	@extend .flex;
-    }
-}
-
-.tomster {
-    position: relative;
-    width: 324px;
-    height: 308px;
-    margin: 60px;
-    left: -60px;
-
-    -webkit-transform-style: preserve-3d;
-
-    -webkit-animation: spin 6s linear infinite;
-
-    > div {
-	@extend .curvy;
-	position: absolute;
-	top: 0; left: 0;
-	width: 100%;
-	height: 100%;
-	x-webkit-backface-visibility: hidden;
-
-    }
-    .front {
-	background-color: $bghighlight;	
-	background-image: url(../tomster.png);
-	z-index: 1;
-    }
-    .back {
-	background-color: $bghighlight;
-	background-image: url(../tomster.png);
-	-webkit-transform: translateX(-50%)rotateY(-120deg)translateX(-50%);  
-    }
-    .side {
-	background-color: $bghighlight;
-	background-image: url(../tomster.png);
-	-webkit-transform: translateX(50%)rotateY(120deg)translateX(50%);  
-    }
-
-}
-
-@-webkit-keyframes spin {
-    from { -webkit-transform: rotateX(-15deg); }
-    25% { -webkit-transform: rotateX(-15deg)rotateY(90deg); }
-    75% { -webkit-transform: rotateX(-15deg)rotateY(270deg); }
-    to { -webkit-transform: rotateX(-15deg)rotateY(360deg); }
-}
-
-.CodeRay {
-    font-size: 2em;
-    border: 1px solid $secondary;
-    @extend .curvy;
-    background-color: $bghighlight;
-    padding: 0 0.5em;
-}
-
-#animated-if-demo {
-    border: 1px solid $secondary;
-    @extend .curvy;
-    background-color: $pale_cyan;
-    padding: 0 0.5em;
-    min-width: 30em;
-    select {
-	display: inline-block;
-    }
-    .checkbox input {
-	display: inline;
-    }
-    .buttons {
+#title-slide {
+    text-align: center;
+    h1, h2 {
 	text-align: center;
     }
 }
 
-.giant {
-    font-size: 14em;
+ul {
+    font-size: 2em;
+    img {
+	display: block;
+	margin-bottom: 1.5em;
+    };
+}
+
+
+@import "vendor/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
+
+pre {
+    font-size: 1.5em;
+    .js {
+	color: $logo_purple;
+    }
+    .css {
+	color: $red;
+    }
+
 }

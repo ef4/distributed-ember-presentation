@@ -1,6 +1,13 @@
 slides = [
   "Title Slide"
   "Why"
+  "Avoid Downsides"
+  "Enjoy Upsides"
+  "Raw Ingredients"
+  "Cache the code"
+  "Sample Cache Manifest"
+  "Cache Bootloader"
+  "Store the data"
   "Remote Debugging"
 ]
 
