@@ -1,9 +1,7 @@
 @import "colors";
-@import "curvy";
 @import "flex";
-@import "button";
 @import "clearfix";
-@import "modal-popup";
+@import "vendor/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
 
 html, body {
     padding: 0;
@@ -44,12 +42,17 @@ html, body {
     }
 
     -webkit-transition: -webkit-transform 250ms ease;
+    transition: transform 250ms ease;
+    
     -webkit-transform: translateX(0);
+    transform: translateX(0);
+    
     overflow-y: scroll;
     overflow-x: hidden;
 
     &:hover {
 	-webkit-transform: translateX(14em);
+	transform: translateX(14em);
     }
 }
 
@@ -70,59 +73,6 @@ html, body {
 
 
 
-
-#parent-demo {
-    width: 551px;
-    height: 700px;
-    background-image: url(../tablet.png);
-    padding: 80px 56px 80px 62px;
-    box-sizing: border-box;
-
-    > div {
-	width: 100%;
-	height: 100%;
-	overflow:hidden;
-	-webkit-transform: translateX(0);
-    }
-
-    > div > div {
-	width: 200%;
-	height: 100%;
-	-webkit-transition: -webkit-transform 250ms;
-	-webkit-transform: translateX(0);
-	&.over {
-	    -webkit-transform: translateX(-50%);
-	}
-	
-	> div {
-	    min-height: 1em;
-	    width: 50%;
-	    box-sizing: border-box;
-	    float: left;
-	}
-    }
-    
-    .list {
-	overflow-y:scroll;
-	height: 100%;
-	
-	a {
-	    display: block;
-	    cursor: pointer;
-	    padding: 0.75em 1em;
-	    border-bottom: 1px solid $tertiary;
-	    color: $normal;
-	    text-decoration: none;
-	    &.active {
-		color: $logo_blue;
-		background-color: $bghighlight;
-	    }
-	    &:hover {
-		background-color: $bghighlight;
-	    }
-	}
-    }
-}
 
 .attribution {
     font-size: 0.8;
@@ -148,8 +98,6 @@ ul {
     }
 }
 
-
-@import "vendor/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
 
 pre {
     font-size: 1.5em;
