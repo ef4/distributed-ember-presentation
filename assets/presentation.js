@@ -601,7 +601,7 @@ var define, requireModule, require, requirejs;
       
 
 
-      data.buffer.push("<div id=\"title-slide\">\n  <h1>Distributed Data for Better User Experience</h2>\n  <h3>Edward Faulkner &lt;edward@braveleaf.com&gt;</h3>\n\n  <img src=\"distributed-tomster.png\">\n\n</div>\n");
+      data.buffer.push("<div id=\"title-slide\">\n  <h1>Distributed Data for Better User Experience</h2>\n  <h3>Edward Faulkner &lt;edward@braveleaf.com&gt;</h3>\n  <h3><a href=\"http://ef4.github.io/distributed-ember-presentation/\">http://ef4.github.io/distributed-ember-presentation/</a></h3>\n\n  <img style=\"margin-top: -4em\" src=\"distributed-tomster.png\">\n\n</div>\n");
       
     });
   });
