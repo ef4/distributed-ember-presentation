@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Presentation</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <base href="/" />
+
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/presentation.css">
+  </head>
+  <body>
+    <script>
+      window.PresentationENV = {"baseURL":"/","locationType":"auto","EmberENV":{"FEATURES":{}},"APP":{"LOG_RESOLVER":true,"LOG_ACTIVE_GENERATION":true,"LOG_MODULE_RESOLVER":true,"LOG_VIEW_LOOKUPS":true},"LOG_MODULE_RESOLVER":true};
+      window.EmberENV = window.PresentationENV.EmberENV;
+    </script>
+    <script src="assets/vendor.js"></script>
+    <script src="assets/presentation.js"></script>
+    <script>
+      window.Presentation = require('presentation/app')['default'].create(PresentationENV.APP);
+    </script>
+
+  </body>
+</html>
