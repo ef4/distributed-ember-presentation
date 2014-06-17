@@ -1,9 +1,13 @@
 <div>
   <h1>Store the Data</h1>
+  <div class="attribution">Credit to <a href="http://caniuse.com">caniuse.com</a></div>
   <ul>
-    <li>webSQL
+    <li>webSQL &mdash; No longer on standards track <img style="display:inline-block" src="Simple_sad_face.png">
       <a href="http://caniuse.com/#search=websql"><img src="caniuse-sql.png"></a>
-    <li>localStorage</li>
+    <li>localStorage &mdash; Hard size limits, in most cases 5MB of
+    UTF-16.
+      <p>Consider wrapping in an async API in case you change your
+      mind later, or you may rewrite a lot.</p>
       <a href="http://caniuse.com/#search=localstorage"><img src="caniuse-localstorage.png"></a>
     <li>IndexDB
       <a href="http://caniuse.com/#search=indexdb"><img src="caniuse-indexdb.png"></a>

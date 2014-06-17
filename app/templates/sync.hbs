@@ -1,0 +1,15 @@
+<div>
+  <h1>Synchronize</h1>
+  (Could be a whole talk by itself. Or a PhD thesis.)
+
+  <ul>
+    <li>Naive solutions work until they don't.
+      <p>Example: "dirty" is not really a boolean.</p>
+    <li>You need to support forking & merging of state.
+      <p>The alternative &mdash; strong consistency &mdash; means a lot of waiting and failing.</p>
+    <li>git-like replication
+    <li>Operational transforms (see <a href="http://sharejs.org/">ShareJS</a>)
+    <li>Convergent Replicated Data Types (CvRDTs, see <A href="http://confreaks.com/videos/3311-emberconf2014-convergent-divergent">@cmeik's EmberConf talk</a>)
+    <li>Causality tracking (generalized vector clocks, <a href="https://github.com/ef4/relativity">Interval Tree Clocks Example</a>)
+  </ul>
+</div>

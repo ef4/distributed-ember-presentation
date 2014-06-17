@@ -1,0 +1,16 @@
+<div>
+  <h1>Some Ember-specific Patterns</h1>
+
+  <ul>
+    <li>Global state indicators
+      <p>"You've been offline for 2 hours", "You have unshared changes".
+    <li>Nested error routes
+      <p>To deal gracefully with gaps in local offline data.
+    <li>Consider "checkout-to-edit"
+      <p>Think git-like: it's often nice to edit without upstream
+	interruptions, and then deal with merges when you're done.</p>
+    <li>Authentication
+      <p>Like any Ember app, send people to login if they don't have a good session.
+      <p>But sometimes there won't be a server available. Offline
+      logout/login can be done, with tradeoffs.
+</div>

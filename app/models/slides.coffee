@@ -8,7 +8,11 @@ slides = [
   "Sample Cache Manifest"
   "Cache Bootloader"
   "Store the data"
-  "Remote Debugging"
+  "Objects and relations"
+  "Sync"
+  "Some Ember Patterns"
+  "State is a liability"
+  "Big Picture Why"
 ]
 
 Slide = Ember.Object.extend
