@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    baseURL: '/',
+    baseURL: '/distributed-ember-presentation',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
