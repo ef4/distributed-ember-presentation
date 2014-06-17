@@ -241,7 +241,7 @@ var define, requireModule, require, requirejs;
     "use strict";
     var Slide, slideObjects, slides;
 
-    slides = ["Title Slide", "Why", "Avoid Downsides", "Enjoy Upsides", "Raw Ingredients", "Cache the code", "Sample Cache Manifest", "Cache Bootloader", "Store the data", "Objects and relations", "Sync", "Some Ember Patterns", "State is a liability", "Big Picture Why"];
+    slides = ["Title Slide", "Why", "Avoid Downsides", "Enjoy Upsides", "Raw Ingredients", "Cache the code", "Sample Cache Manifest", "Cache Bootloader", "Store the data", "Objects and relations", "Sync", "Some Ember Patterns", "State is a liability", "Big Picture Why", "Its Over"];
 
     Slide = Ember.Object.extend({
       route: (function(k, v) {
@@ -482,6 +482,21 @@ var define, requireModule, require, requirejs;
 
 
       data.buffer.push("<div>\n  <br><br>\n  <h1>High availability&hellip;</h1>\n  <h2>&hellip;lets you compete with all those \"enterprise\" desktop products.</h2>\n  <br><br>\n  <h1>Release & iterate at web speed&hellip;</h1>\n  <h2>&hellip;while acting like a first-class native application.</h2>\n</div>\n\n");
+      
+    });
+  });
+;define("presentation/templates/its-over", 
+  ["ember","exports"],
+  function(__dependency1__, __exports__) {
+    "use strict";
+    var Ember = __dependency1__["default"];
+    __exports__["default"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+    this.compilerInfo = [4,'>= 1.0.0'];
+    helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+      
+
+
+      data.buffer.push("<img src=\"its-over.jpg\">\n");
       
     });
   });
