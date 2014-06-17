@@ -13,6 +13,7 @@ slides = [
   "Some Ember Patterns"
   "State is a liability"
   "Big Picture Why"
+  "Its Over"
 ]
 
 Slide = Ember.Object.extend
